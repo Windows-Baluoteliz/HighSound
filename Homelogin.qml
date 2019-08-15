@@ -13,6 +13,9 @@ HomeloginForm{
     }
 
     Component.onCompleted: {
+        textInputChannel.text = main.channelName
+        textInputMobileUid.text = main.mobileuid
+
 		var i, devices
         devices = agoraRtcEngine.getRecordingDeviceList()
         //console.log(devices.name)

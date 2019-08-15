@@ -21,8 +21,6 @@ Item {
 
     function leaveChannel() {
         if (agoraRtcEngine.leaveChannel() === 0) {
-            channelName = ""
-			mobileuid = ""
             homepage()
         }
     }

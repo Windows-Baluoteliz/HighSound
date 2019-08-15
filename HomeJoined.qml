@@ -2,7 +2,7 @@ import QtQuick 2.4
 
 HomeJoinedForm {
 	anchors.fill: parent
-    btnLeave.onClicked:main.homepage()
+    btnLeave.onClicked:main.leaveChannel()
     Component.onCompleted: {
         var i, devices
         devices = agoraRtcEngine.getRecordingDeviceList()
