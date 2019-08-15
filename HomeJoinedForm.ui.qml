@@ -73,6 +73,6 @@ Rectangle {
          text:qsTr("离开频道")
          defaultImageSource: "images/leave_channel.png"
          hoverImageSource: "images/leave_channel_hover.png"
-         pressedImageSource: ""
+         pressedImageSource: "images/leave_channel.png"
     }
 }

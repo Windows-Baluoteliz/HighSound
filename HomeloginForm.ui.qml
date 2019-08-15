@@ -30,6 +30,7 @@ Rectangle {
          anchors.topMargin: 0
        }
 
+       property alias textInputChannel: textInputChannel
        TextInput {
            id: textInputChannel
            x:576
@@ -40,7 +41,8 @@ Rectangle {
            wrapMode:Text.wrapMode
            font.family:"微软雅黑"
            color: "#f1eeee"
-           text: qsTr("Channel Name")
+           text: qsTr("")
+           echoMode: TextInput.Normal
            horizontalAlignment: Text.AlignHCenter
            verticalAlignment: Text.AlignVCenter
            opacity: 1
@@ -48,8 +50,10 @@ Rectangle {
            selectedTextColor: "#aaaa23"
            font.bold: true
            font.pixelSize: 12
+           cursorVisible: true
        }
 
+       property alias textInputMobileUid: textInputMobileUid
        TextInput {
            id: textInputMobileUid
            y: 269
@@ -60,7 +64,7 @@ Rectangle {
            wrapMode:Text.wrapMode
            font.family:"微软雅黑"
            color: "#f1eeee"
-           text: qsTr("Mobile UID")
+           text: qsTr("")
            horizontalAlignment: Text.AlignHCenter
            verticalAlignment: Text.AlignVCenter
            opacity: 1
@@ -68,6 +72,7 @@ Rectangle {
            selectedTextColor: "#aaaa23"
            font.bold: true
            font.pixelSize: 12
+           cursorVisible: false
        }
 
        property alias cbMicrophones: cbMicrophones
@@ -92,7 +97,7 @@ Rectangle {
             y:378
             defaultImageSource: "images/join_channel.png"
             hoverImageSource: "images/join_channel_hover.png"
-            pressedImageSource: ""
+            pressedImageSource: "images/join_channel.png"
             text:qsTr("加入频道")
        }
 

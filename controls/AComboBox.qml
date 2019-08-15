@@ -44,13 +44,13 @@ import QtQuick.Controls.Styles 1.4
 
 ComboBox {
     id: combobox
-    //signal activated
-    property int fontSize: 12
+    property int fontSize:12
     property bool fontBold: true
 
     style: ComboBoxStyle {
         id: cbStyle
         dropDownButtonWidth: 40
+        textColor:"white"
         __dropDownStyle: MenuStyle {
             font: cbStyle.font
             __labelColor: cbStyle.textColor
@@ -65,13 +65,14 @@ ComboBox {
             }
         }
         Component.onCompleted: {
-            cbStyle.font.pointSize = combobox.fontSize
+            cbStyle.font.family ="微软雅黑"
+            cbStyle.font.pointSize = 10
             cbStyle.font.bold = combobox.fontBold
         }
 
         background: Item {
-//            implicitWidth: Math.round(TextSingleton.implicitHeight * 4.5)
-//            implicitHeight: Math.max(25, Math.round(TextSingleton.implicitHeight * 1.2))
+           // implicitWidth: Math.round(TextSingleton.implicitHeight * 4.5)
+           // implicitHeight: Math.max(25, Math.round(TextSingleton.implicitHeight * 1.2))
             Rectangle {
                 anchors.fill: parent
                 anchors.bottomMargin: control.pressed ? 0 : -1
@@ -91,7 +92,7 @@ ComboBox {
                 Rectangle {
                     anchors.fill: parent
                     radius: parent.radius
-                    color: control.activeFocus ? "#47b" : "white"
+                    color: control.activeFocus ? "white":"#47b"
                     opacity: control.hovered || control.activeFocus ? 0.1 : 0
                     Behavior on opacity {NumberAnimation{ duration: 100 }}
                 }
@@ -99,14 +100,14 @@ ComboBox {
             AImageButton {
                 id: imageItem
                 visible: control.menu !== null
-                defaultImageSource: "/images/icon_down.png"
+                defaultImageSource: "/images/btn_down.png"
                 hoverImageSource: "/images/btn_down.png"
                 pressedImageSource: "/images/btn_down.png"
                 //source: "../images/icon_down.png"
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
-                anchors.rightMargin: dropDownButtonWidth / 2
-                opacity: control.enabled ? 0.6 : 0.3
+                anchors.rightMargin: -30//dropDownButtonWidth / 2
+                opacity: control.enabled ? 0.6: 0.3
             }
         }
     }
